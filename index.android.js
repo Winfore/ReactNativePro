@@ -12,46 +12,74 @@ import {
   Text,
   View,
   Image,
-  TouchableHighlight,
-  ToastAndroid
 } from 'react-native';
 
 class CheckInPlay extends Component {
   render() {
     return (
-      <View style={styles.container}>
-          <TouchableHighlight style={styles.gif} onPress={MainButtonPress}>
-            <Image
-              style={styles.gif}
-              source={{uri: 'http://facebook.github.io/react/img/logo_og.png'}}
-            />
-          </TouchableHighlight>
+      <View style={{}}>
+        <View style={[styles.height160,styles.row]}>
+          <View style={[styles.height160,styles.part_1_left]}>
+            <Text style={[styles.font14,styles.marTop18,styles.green,styles.marLeft30]}>我们约吧</Text>
+            <Text style={[styles.font10,styles.marTop14,styles.marLeft30]}>恋人家人好朋友</Text>
+            <Image style={styles.yue} 
+            source={{uri:'http://p0.meituan.net/mmc/fe4d2e89827aa829e12e2557ded363a112289.png'}}></Image>
+          </View>
+          <View style={[styles.height160,styles.part_1_right]}>
+            <View></View>
+            <View>
+              <View></View>
+            </View>
+          </View>
         </View>
+        <View></View>
+        <View></View>
+      </View>
     );
   }
 }
 
-var MainButtonPress = function () {
-  // MainFunction Body
-  //ToastAndroid.show('打卡成功', ToastAndroid.SHORT);
-  navigator.geolocation.getCurrentPosition(
-      (initialPosition) => alert(JSON.stringify(initialPosition)),
-      (error) => alert(error.message),
-      {enableHighAccuracy: true, timeout: 20000, maximumAge: 1000}
-    );
-  //var position = JSON.stringify(this.state.initialPosition);
-}
-
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#222222',
+  row:{
+    flexDirection:'row',
   },
-  gif: {
-    width:150,
-    height:150
+  marTop18:{
+    marginTop:18,
+  },
+  marTop14:{
+      marginTop:14,
+  },
+  green:{
+    color:'#55A44B',
+    fontWeight: '900'
+  },
+  marLeft30:{
+    marginLeft:30,
+  },
+  height160:{
+    height:160,
+  },
+  height160:{
+    height:160,
+  },
+  yue:{
+    height:80,
+  },
+  font14:{
+    fontSize:14,
+  },
+  font10:{
+    fontSize:10,
+  },
+  part_1_left:{
+    flex:1,
+    borderWidth:1,
+    borderColor:'red',
+  },
+  part_1_right:{
+    flex:2,
+    borderWidth:1,
+    borderColor: 'red',
   },
 });
 
